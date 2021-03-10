@@ -1,0 +1,37 @@
+.jumbotron{
+  margin-top:30px;
+  height:600px;
+  background-image:url('../../img/fondo-pag-speciali.jpg');
+}
+.card-container{
+  display:flex;
+  flex-wrap:wrap;
+
+  .card{
+    width: calc(100% / 3);
+
+      img{
+        max-width: 100%;
+      }
+      .overlay {
+        display: none;
+      }
+
+  &:hover .overlay {
+    display: block;
+    background-color: lightgrey;
+  }
+}
+
+}
+.sfondo-news{
+  margin-top: 30px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-image:url('../../img/footer-montagne-bottom.jpg');
+
+}
+h1{
+  padding:15px;
+  font-weight: bold;
+}

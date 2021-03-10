@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
 @section ('content')
-  <span>News</span>
+  <h1>News</h1>
+  <div class="sfondo-news">
+
+  </div>
 @endsection

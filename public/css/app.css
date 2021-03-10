@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-height: 1170px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+}
+
+header ul {
+  list-style: none;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: #002d75;
+  padding: 15px;
+}
+
+header ul li a:hover {
+  background-color: lightblue;
+}
+
+.jumbotron {
+  margin-top: 30px;
+  height: 600px;
+  background-image: url(/images/fondo-pag-speciali.jpg?06a79f19fbb4489a17e2dff67ce37137);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-container .card {
+  width: calc(100% / 3);
+}
+
+.card-container .card img {
+  max-width: 100%;
+}
+
+.card-container .card .overlay {
+  display: none;
+}
+
+.card-container .card:hover .overlay {
+  display: block;
+  background-color: lightgrey;
+}
+
+.sfondo-news {
+  margin-top: 30px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-image: url(/images/footer-montagne-bottom.jpg?d53b01335f4c26b84b40ca2ab0a64ece);
+}
+
+h1 {
+  padding: 15px;
+  font-weight: bold;
+}
+
