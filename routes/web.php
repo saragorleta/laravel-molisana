@@ -21,7 +21,26 @@ Route::get('/', function () {
 Route::get('/prodotti', function () {
   $pasta = config('pastaMolisana');
 
-    $data = ['formati'=> $pasta];
+
+  $pasta_lunga= array_filter($pasta, function($elemento) {
+    return $elemento['tipo']== 'lunga';
+  });
+  // $elemento è un valore segnaposto
+  // 'tipo' è all'interno di array pasta
+  $pasta_corta= array_filter($pasta, function($elemento) {
+    return $elemento['tipo']== 'corta';
+  });
+  $pasta_cortissima= array_filter($pasta, function($elemento) {
+    return $elemento['tipo']== 'cortissima';
+  });
+
+    $data = [
+        'formati'=> [
+        'lunga'=> $pasta_lunga,
+        'corta'=> $pasta_corta,
+        'cortissima'=>$pasta_cortissima
+        ]
+    ];
     // trasformiamo $pasta in un $data in quanto
     // dobbiamo passargli
     // un array associativo(coppia chiave-valore)
@@ -36,17 +55,21 @@ Route::get('/prodotti', function () {
 
 Route::get('/dettaglio/{id}', function ($id) {
   $pasta = config('pastaMolisana');
+  if ($id>=0){
+    $prodotto = $pasta[$id];
 
-  $prodotto = $pasta[$id];
-
-  $data = [
-    'formaPasta' => $prodotto
-  ];
-  // trasformiamo $prodotto in un $data in quanto
-  // dobbiamo passargli
-  // un array associativo(coppia chiave-valore)
-  // a return view
-    return view('dettagli', $data);
+    $data = [
+      'formaPasta' => $prodotto
+    ];
+    // trasformiamo $prodotto in un $data in quanto
+    // dobbiamo passargli
+    // un array associativo(coppia chiave-valore)
+    // a return view
+      return view('dettagli', $data);
+  }
+  else{
+    abort('404');
+  }
 })->name('pagina-dettagli');
 
 

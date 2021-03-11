@@ -28,7 +28,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-  background-color: lightblue;
+  background-color: #b8dae4;
 }
 
 .jumbotron {
@@ -85,5 +85,22 @@ header ul li a:hover {
 h1 {
   padding: 15px;
   font-weight: bold;
+}
+
+.scheda-prodotto img {
+  max-width: 100%;
+  display: flex;
+}
+
+.descrizione {
+  background-color: #b8dae4;
+  padding: 30px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  padding: 20px;
 }
 
