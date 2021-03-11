@@ -9,17 +9,32 @@
 
   .card{
     width: calc(100% / 3);
+    position:relative;
 
       img{
         max-width: 100%;
       }
       .overlay {
         display: none;
+
+      }
+      .overlay a{
+        color:darkblue;
+        text-decoration: none;
       }
 
   &:hover .overlay {
+    font-size: 15px;
     display: block;
-    background-color: lightgrey;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover .card{
+    width: 100%;
+    background:yellow;
+    z-index:1;
   }
 }
 

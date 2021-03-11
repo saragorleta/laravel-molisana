@@ -44,6 +44,7 @@ header ul li a:hover {
 
 .card-container .card {
   width: calc(100% / 3);
+  position: relative;
 }
 
 .card-container .card img {
@@ -54,9 +55,24 @@ header ul li a:hover {
   display: none;
 }
 
+.card-container .card .overlay a {
+  color: darkblue;
+  text-decoration: none;
+}
+
 .card-container .card:hover .overlay {
+  font-size: 15px;
   display: block;
-  background-color: lightgrey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-container .card:hover .card {
+  width: 100%;
+  background: yellow;
+  z-index: 1;
 }
 
 .sfondo-news {
